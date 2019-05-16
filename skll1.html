@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="device-width,initial-scale=1.0">
+	<title>解决border重合问题</title>
+	<link rel="stylesheet" type="text/css" href="assets/css/common.css">
+	<style>
+		.box{
+			margin:100px;
+		} 
+		.box ul li{
+			position: relative;
+			width:180px;
+			height:200px;
+			line-height: 200px;
+			text-align: center;
+			float:left;
+			color:pink;
+			border:2px solid pink;
+			margin: 0 0 -2px -2px;
+			z-index: 0;
+		}
+		.box ul li:hover{
+			color:#88acf9;
+			border: 2px solid #88acf9;
+			z-index: 1;
+		}
+	</style>
+</head>
+<body>
+	<!-- 
+		为li设置margin:0 0 -width -width,-width为li的border宽度，
+		同时设置positon:relative，z-index:0;
+		hover时设置z-index:1就可以啦
+	 -->
+	<div class="box">
+		<ul>
+			<li>some infomations</li>
+			<li>some infomation</li>
+			<li>some infomation</li>
+			<li>some infomation</li>
+		</ul>
+	</div>
+	<script type="text/javascript" src="assets/jq/jquery-2.1.4.min.js"></script>
+</body>
+</html>
