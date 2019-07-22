@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>算法题</title>
+</head>
+<body>
+<script type="text/javascript" src="assets/jq/jquery-2.1.4.min.js"></script>
+<script>
+    $(function(){
+        sort([1,4,5,-4,0,9]);
+
+        /* 算法题：数组去重 */
+        // var reArr = ['a','b','c','c','c','e','d','af'];
+        var reArr = [2,3,4,2,4,5];
+        var reBrr = [];
+        var newArray = reArr.sort(); //数组排序
+        console.log(newArray)
+
+        for(var i=0;i<newArray.length;i++){
+            if(reBrr.indexOf(newArray[i]) == -1){ //indexOf若数组中不存在返回 -1
+                reBrr.push(newArray[i])
+            }
+        }
+        console.log(reBrr)
+
+        //利用set去重
+        let arr1 = [6,2,3,2,4,1,5];
+        let nkk = ['a','b','c','c','c','e','d','af'];
+        let brr1 = [... new Set(nkk)];
+        console.log(brr1);
+
+        //将数组扁平化并去除重复数组，最终得到一个升序且不重复的数组
+        let arr2 = [[10,9],[3,4,4],[5,6,7,[7,8,2,[1]]]];
+        //扁平化
+        let flatArr = arr2.flat(4);
+        //去重
+        let disArr = Array.from(new Set(flatArr));
+        //排序
+        let result = disArr.sort(function(a, b) {
+            return a-b
+        });
+        console.log(result);
+
+        //es6拓展属性[...]  合并并替换
+        let arr3 = {a:1,b:2};
+        let arr4 = {...arr3,...{a:3,d:4}};
+        console.log(arr4);
+
+    })
+
+    /* 快速排序算法 */
+    function sort(nums){
+        if(nums.length == 0){
+            return [];
+        }
+        var less = [];
+        var large = [];
+        var pivot = nums[0];//基准元素
+        for(var i=1;i<nums.length;i++){
+            if(nums[i] < pivot){
+                less.push(nums[i]);
+            }else{
+                large.push(nums[i]);
+            }
+        }
+        var newArr = less.concat(large); //数组合并 arr.concat(brr)
+        console.log(newArr);
+
+    }
+</script>
+</body>
+</html>
