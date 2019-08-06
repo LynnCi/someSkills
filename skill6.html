@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>css3伪元素使用技巧</title>
+    <style>
+        .box1,.box2{
+            width:200px;
+            height:80px;
+            line-height: 80px;
+            text-align: center;
+            color:#fff;
+        }
+        .box1{
+            background:#19c1b2;
+        }
+        .box1-child{
+            position: relative;
+            float: left;
+            width:120px;
+            height:80px;
+            line-height: 80px;
+            background:#009688;
+        }
+        .box1-child:after{
+            position: absolute;
+            content: "";
+            right:0;
+            top:30px;
+            width: 0;
+            height:0;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-right: 10px solid #19c1b2; //箭头向左
+        }
+        .box2{
+            margin-top:20px;
+            background:#40b945;
+        }
+        .box2-child{
+            position: relative;
+            float: right;
+            width:120px;
+            height:80px;
+            line-height: 80px;
+            background:#37a03b;
+        }
+        .box2-child:after{
+            position: absolute;
+            content: "";
+            left:0;
+            top:30px;
+            width: 0;
+            height:0;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-left: 10px solid #40b945;//箭头向右
+        }
+    </style>
+</head>
+<body>
+    <!-- 伪元素after实现三角箭头 -->
+    <div class="box1">
+        <div class="box1-child">ticket</div>
+    </div>
+
+    <div class="box2">
+        <div class="box2-child">ticket</div>
+    </div>
+
+</body>
+</html>

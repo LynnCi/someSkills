@@ -10,13 +10,12 @@
 <script>
     $(function(){
         sort([1,4,5,-4,0,9]);
+        bubSort([3,2,7,5,1]);
 
-        /* 算法题：数组去重 */
-        // var reArr = ['a','b','c','c','c','e','d','af'];
+        //算法题：数组去重
         var reArr = [2,3,4,2,4,5];
         var reBrr = [];
         var newArray = reArr.sort(); //数组排序
-        console.log(newArray)
 
         for(var i=0;i<newArray.length;i++){
             if(reBrr.indexOf(newArray[i]) == -1){ //indexOf若数组中不存在返回 -1
@@ -50,7 +49,7 @@
 
     })
 
-    /* 快速排序算法 */
+    //快速排序算法
     function sort(nums){
         if(nums.length == 0){
             return [];
@@ -67,7 +66,21 @@
         }
         var newArr = less.concat(large); //数组合并 arr.concat(brr)
         console.log(newArr);
+    }
 
+    //冒泡排序
+    function bubSort(arr){
+        for(let i=0;i<arr.length;i++){
+            //内循环是当前趟数需要比较的次数
+            for(let j=0;j<arr.length-i-1;j++){
+                if(arr[j] > arr[j+1]){
+                    temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
+                }
+            }
+        }
+        console.log(arr)
     }
 </script>
 </body>
