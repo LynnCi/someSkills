@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>设置div垂直居中显示</title>
+    <style>
+        .box1{
+            position: absolute;
+            top:50%;
+            left:50%;
+            margin-left:-100px;
+            margin-top:-50px;
+
+            width:200px;
+            height:100px;
+            line-height: 100px;
+            text-align: center;
+            border:1px solid #1b1b1b;
+        }
+        .box2{
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform:translate(-50%,-50%);
+            background: pink;
+            color:#fff;
+        }
+    </style>
+</head>
+<body>
+
+<!-- 已知div宽高 -->
+<div class="box1">box1</div>
+
+<!-- 未知div宽高 -->
+<div class="box2">
+    <div class="box2-child">box2-child</div>
+</div>
+
+
+</body>
+</html>

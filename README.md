@@ -10,3 +10,6 @@ array常用操作；<br/>
 css滚动指示器设置，纯css设置滚动条，不使用javascript；
 4-1:传统方法缺点是不可设置背景图
 <br/>
+5、skill5  设置div垂直居中显示<br>
+未知宽高，使用transform；<br>
+已知宽高，使用absolute + (-margin)<br>
